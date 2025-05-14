@@ -1,19 +1,17 @@
 import streamlit as st
 
-col1, col2, col3 = st.columns(3)
+st.title("Program Streamlit 30 Hari Bersama Grok AI")
+
+col1, col2, col3 = st.columns([2,2,3])
+
+col1.subheader("Ini adalah Subheader dari kolom 1")
 with col1:
+    st.write("Ini adalah kolom 1")
 
-    st.title("Belajar Streamlit 30 Hari by Grok AI")
-    st.write("Ini adalah perjalan saya belajar streamlit dibantu oleh Grok AI")
-    st.write("Saya mempunyai Hobi untuk belajar hal yang baru, walaupun terkadang saya cepat bosan")
-    st.write("saya mengenal streamlit melalui teman asprak alpro saya, yaitu bima")
-    st.write("Saya merasa hal ini adalah suatu hal yang baru karena tidak pernah diajarkan pada jurusan saya")
-
-st.columns
+col2.subheader("Ini adalah Subheader dari kolom 2")
 with col2:
-    tombol = st.button("Tekan") 
-    reset = st.button("resset")
-    if tombol:
-        st.write("Tombol Ditekan")
-    else:
-        st.write("Tombol Tidak ditekan")
+    st.write("Ini adalah kolom 2")
+
+col3.subheader("Ini adalah Subheader dari kolom 3")
+with col3:
+    st.write("Ini adalah kolom 3")
