@@ -1,19 +1,13 @@
 import streamlit as st
+import numpy as np
 
-col1, col2, col3 = st.columns(3)
-with col1:
+st.title("Abyan Wibowo Tantangan 30 Hari")
 
-    st.title("Belajar Streamlit 30 Hari by Grok AI")
-    st.write("Ini adalah perjalan saya belajar streamlit dibantu oleh Grok AI")
-    st.write("Saya mempunyai Hobi untuk belajar hal yang baru, walaupun terkadang saya cepat bosan")
-    st.write("saya mengenal streamlit melalui teman asprak alpro saya, yaitu bima")
-    st.write("Saya merasa hal ini adalah suatu hal yang baru karena tidak pernah diajarkan pada jurusan saya")
+col1, col2 = st.columns([3, 1])
+data = np.random.randn(10, 1)
 
-st.columns
-with col2:
-    tombol = st.button("Tekan") 
-    reset = st.button("resset")
-    if tombol:
-        st.write("Tombol Ditekan")
-    else:
-        st.write("Tombol Tidak ditekan")
+col1.subheader("A wide column with a chart")
+col1.line_chart(data)
+
+col2.subheader("A narrow column with the data")
+col2.write(data)
