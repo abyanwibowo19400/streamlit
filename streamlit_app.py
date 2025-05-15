@@ -1,19 +1,26 @@
 import streamlit as st
+st.title("Kalkulator Sederhana")
 
-col1, col2, col3 = st.columns(3)
-with col1:
+#HINT : INPUT
+angka1 = st.number_input("Masukkan angka pertama", format="%.2f")
+angka2 = st.number_input("Masukkan angka kedua", format="%.2f")
 
-    st.title("Belajar Streamlit 30 Hari by Grok AI")
-    st.write("Ini adalah perjalan saya belajar streamlit dibantu oleh Grok AI")
-    st.write("Saya mempunyai Hobi untuk belajar hal yang baru, walaupun terkadang saya cepat bosan")
-    st.write("saya mengenal streamlit melalui teman asprak alpro saya, yaitu bima")
-    st.write("Saya merasa hal ini adalah suatu hal yang baru karena tidak pernah diajarkan pada jurusan saya")
+satuan_asal = st.selectbox("Pilih operasi", ["Tambah", "Kurang", "Kali", "Bagi"])
 
-st.columns
-with col2:
-    tombol = st.button("Tekan") 
-    reset = st.button("resset")
-    if tombol:
-        st.write("Tombol Ditekan")
-    else:
-        st.write("Tombol Tidak ditekan")
+if st.button("Hitung"):
+    if satuan_asal == "Tambah":
+        hasil = angka1 + angka2
+        st.success(f"Hasil : {hasil}")
+    elif satuan_asal == "Kurang":
+        hasil = angka1 - angka2
+        st.success(f"Hasil : {hasil}")
+    elif satuan_asal == "Kali":
+        hasil = angka1 * angka2
+        st.success(f"Hasil : {hasil}")
+    elif satuan_asal == "Bagi":
+        if angka2 != 0:
+            hasil = angka1 / angka2
+            st.success(f"Hasil : {hasil}")
+        else:
+            st.error("Tidak bisa membagi dengan nol!")
+
